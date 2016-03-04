@@ -1,0 +1,18 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>example</title>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  <h1 id="message"></h1>
+  <script>
+    $(function(){
+      var $message = $('#message');
+      $.get('http://localhost:4321/?reg=http://api.hitokoto.us/rand?cat=a&charset=utf-8',function(data){
+        $message.html(JSON.stringify(data));
+      });
+    });
+  </script>
+</body>
+</html>
