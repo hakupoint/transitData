@@ -12,7 +12,7 @@ http.createServer(function(req,res){
   res.setHeader("Content-Type", "application/json;charset=utf-8");
   res.setHeader("Access-Control-Allow-Origin", "*");
   let query = querystring.parse(url.parse(req.url).query);
-  let _url = query.reg;
+  let _url = decodeURIComponent(query.reg);
   if(!_url){
     res.write(JSON.stringify(defined));
     return res.end();
